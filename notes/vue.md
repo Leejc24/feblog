@@ -1,20 +1,20 @@
 ### vue 优化
 + 一 代码书写习惯
-    1.不需要做响应式的数据，不要放在data中（根据原理会调用getter/setter）
-    2.v-if 和 v-show 的合理使用
+    1. 不需要做响应式的数据，不要放在data中（根据原理会调用getter/setter）
+    2. v-if 和 v-show 的合理使用
         - v-if （display:none/block） 
         - v-show （display: visiblity/hidden）
         - v-if 的切换开销更大
-    3.v-for 遍历必须为 item 添加 key，可以更快的定位到diff，避免使用 v-if，必要情况下可以使用 computed 属性
-    4.能拆分的组件尽量拆分 颗粒度尽可能小
-    5.设置缓存（http 缓存、service worker 离线缓存）
-    6.使用vuex、结合路由钩子函数 beforeEnter 一起使用，这样组件还没有加载就能用 vuex 的数据了
-    7.keep-alive 可以实现组件的缓存，把组件的结构和数据都缓存到内存
-    8.路由懒加载(2种)
+    3. v-for 遍历必须为 item 添加 key，可以更快的定位到diff，避免使用 v-if，必要情况下可以使用 computed 属性
+    4. 能拆分的组件尽量拆分 颗粒度尽可能小
+    5. 设置缓存（http 缓存、service worker 离线缓存）
+    6. 使用vuex、结合路由钩子函数 beforeEnter 一起使用，这样组件还没有加载就能用 vuex 的数据了
+    7. keep-alive 可以实现组件的缓存，把组件的结构和数据都缓存到内存
+    8. 路由懒加载(2种)
         - component: Cart1 = () => import('./Cart1.vue')
         - component: Cart2 = (resolve) => require('./Cart2.vue', resolve)
-    9.按需导入组件
-    10.Object.freeze 也能实现数据劫持，冻结
+    9. 按需导入组件
+    10. Object.freeze 也能实现数据劫持，冻结
 + 二 加载
     1.图片资源懒加载 
     - npm i vue-lazyload -D
